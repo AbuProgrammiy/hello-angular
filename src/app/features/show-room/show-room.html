@@ -22,9 +22,9 @@
   <div class="dataset">
     @for (item of cars(); track $index) {
       <app-car-card
+        [routerLink]="['/lesson/product-detail', item.id]"
         [item]="item"
       >
-    
       </app-car-card>
     }
   </div>

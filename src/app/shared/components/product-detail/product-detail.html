@@ -1,0 +1,28 @@
+@if(isLoading()){
+  <div class="w-full h-30rem flex justify-content-center align-items-center">
+    <p-progress-spinner ariaLabel="loading" />
+  </div>
+}
+@else {
+  <div class="container" [formGroup]="editForm">
+    <div class="car-image-container">
+      <img 
+        class="car-image"
+        [src]="editForm.controls.pictureUrl.value" 
+        alt="moshncha"
+      >
+    </div>
+    <div class="form">
+      <input 
+        type="text" 
+        pInputText 
+        formControlName="pictureUrl"
+      />
+      <input 
+        type="text" 
+        pInputText 
+        formControlName="pictureUrl"
+      />
+    </div>
+  </div>
+}

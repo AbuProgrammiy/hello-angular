@@ -3,11 +3,12 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Button } from "primeng/button";
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
-import { CardModel } from '../../core/models/car.model';
+import { CarModel } from '../../core/models/car.model';
 import { CarService } from '../../core/services/car.service';
 import { CarCard } from "../../shared/components/car-card/car-card";
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { FormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-show-room',
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     Button,
     CarCard,
     ProgressSpinnerModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   templateUrl: './show-room.html',
   styleUrl: './show-room.scss',
@@ -25,8 +27,9 @@ import { FormsModule } from '@angular/forms';
 export class ShowRoom implements OnInit {
   private readonly carService = inject(CarService);
   private readonly destroyRef = inject(DestroyRef);
+  protected readonly router = inject(Router);
 
-  protected cars = signal<CardModel[]>([]);
+  protected cars = signal<CarModel[]>([]);
   protected isLoading = signal<boolean>(false);
   protected searchWord = model<string>();
 
