@@ -11,7 +11,11 @@
 </div>
 
 <div class="dataset">
-  <app-car-card>
-
-  </app-car-card>
+  @for (item of cars(); track $index) {
+    <app-car-card
+      [item]="item"
+    >
+  
+    </app-car-card>
+  }
 </div>
