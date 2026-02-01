@@ -1,0 +1,20 @@
+.car-card{
+  width: 200px;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 2px black;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.car-card:hover{
+  box-shadow: 0 0 6px black;
+}
+
+.card-image{
+  width: 100%;
+  object-fit: cover;
+}
