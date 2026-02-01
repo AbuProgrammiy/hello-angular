@@ -39,8 +39,8 @@ export class ShowRoom implements OnInit {
 
   protected loadData(name?: string) {
     this.isLoading.set(true);
-    this.carService.getAllCards({
-      name: this.searchWord()
+    this.carService.getAll({
+      model: this.searchWord()
     })
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
@@ -48,14 +48,10 @@ export class ShowRoom implements OnInit {
           this.cars.set(data);
           this.isLoading.set(false);
         },
-        error: (err) => {
-          console.log(err);
+        error: (_err) => {
+          this.cars.set([]);
           this.isLoading.set(false);
         }
       });
-  }
-
-  protected search() {
-
   }
 }

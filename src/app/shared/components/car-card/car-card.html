@@ -1,21 +1,25 @@
 <div class="car-card">
   <img 
     class="card-image" 
-    [src]="item()?.pictureUrl" 
+    [src]="item()?.imageUrl"  
     alt="porche"
     >
-  <div class="p-4">
+  <div class="p-4 flex flex-column gap-3">
     <div class="w-full flex justify-content-between">
-      <h4>Model: </h4>
-      <h4>{{ item()?.model }}</h4>
+      <h4>Brand: </h4>
+      <h4>{{ item()?.brand }}</h4>
     </div>
     <div class="w-full flex justify-content-between">
-      <h4>Name: </h4>
-      <p>{{ item()?.name }}</p>
+      <h4>Model: </h4>
+      <p>{{ item()?.model }}</p>
     </div>
     <div class="w-full flex justify-content-between">
       <p>Description: </p>
       <p>{{ item()?.description }}</p>
+    </div>
+    <div class="w-full flex justify-content-between">
+      <p>Price: </p>
+      <p>{{ item()?.price }}$</p>
     </div>
   </div>
 </div>

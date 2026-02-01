@@ -4,25 +4,81 @@
   </div>
 }
 @else {
+  <div 
+    class="back-btn"
+    [routerLink]="['/lesson', 'show-room']"
+  >
+    <i class="pi pi-arrow-left" style="font-size: 1rem"></i>
+  </div>
   <div class="container" [formGroup]="editForm">
     <div class="car-image-container">
       <img 
         class="car-image"
-        [src]="editForm.controls.pictureUrl.value" 
+        [src]="editForm.controls.imageUrl.value" 
         alt="moshncha"
       >
     </div>
-    <div class="form">
-      <input 
-        type="text" 
-        pInputText 
-        formControlName="pictureUrl"
-      />
-      <input 
-        type="text" 
-        pInputText 
-        formControlName="pictureUrl"
-      />
+    <div class="handler">
+      <div class="form">
+
+        <div class="input-wrapper">
+          <label>ImageUrl</label>
+          <input 
+            type="text" 
+            pInputText 
+            formControlName="imageUrl"
+          />
+        </div>
+        <div class="input-wrapper">
+          <label>Brand</label>
+          <input 
+            type="text" 
+            pInputText 
+            formControlName="brand"
+          />
+        </div>
+        <div class="input-wrapper">
+          <label>Model</label>
+          <input 
+            type="text" 
+            pInputText 
+            formControlName="model"
+          />
+        </div>
+        <div class="input-wrapper">
+          <label>Price</label>
+          <input 
+            type="text" 
+            pInputText 
+            formControlName="price"
+          />
+        </div>
+        <div class="input-wrapper">
+          <label>Description</label>
+          <textarea 
+            rows="3" 
+            cols="30" 
+            pTextarea 
+            formControlName="description"
+          ></textarea>
+        </div>
+      </div>
+      <div class="flex justify-content-between">
+        <p-button
+          label="Delete"
+          severity="danger"
+          [disabled]="isUpdating() || isDeleting()"
+          [loading]="isDeleting()"
+          (onClick)="delete()"
+        ></p-button>
+        <p-button
+          label="Save"
+          severity="success"
+          [disabled]="isUpdating() || isDeleting()"
+          [loading]="isUpdating()"
+          (onClick)="update()"
+        ></p-button>
+      </div>
     </div>
   </div>
 }

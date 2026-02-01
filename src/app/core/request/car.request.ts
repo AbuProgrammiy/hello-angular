@@ -1,7 +1,7 @@
 export interface CarRequest {
-  id?: string;
-  model?: string;
-  name?: string;
-  description?: string;
-  pictureUrl?: string;
+  id?: string | null;
+  brand?: string | null;
+  model?: string | null;
+  description?: string | null;
+  imageUrl?: string | null;
 }
