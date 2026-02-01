@@ -1,7 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CarResponse } from '../models/car-response.model';
+import { CardModel } from '../models/car.model';
+import { CarRequest } from '../request/car.request';
+import { buildHttpParams } from '../../shared/utils/build-http-params';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +11,8 @@ import { CarResponse } from '../models/car-response.model';
 export class CarService {
   constructor(private httpClient: HttpClient) { }
 
-  public getAllCards(): Observable<CarResponse> {
-    return this.httpClient.get<CarResponse>('https://car.more-info.uz:400/api/Car/Get');
+  public getAllCards(request?: CarRequest): Observable<CardModel[]> {
+    const params = buildHttpParams(request);
+    return this.httpClient.get<CardModel[]>('https://697ef5a0d1548030ab64d11f.mockapi.io/hello-car/luxry-cars', { params });
   }
 }

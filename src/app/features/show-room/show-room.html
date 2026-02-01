@@ -2,20 +2,30 @@
   <input 
     class="w-full" 
     type="text" 
+    placeholder="Search here"
+    [(ngModel)]="searchWord"
     pInputText 
   />
   <p-button 
     label="Search" 
     severity="success" 
+    (onClick)="loadData()"
   /> 
 </div>
 
-<div class="dataset">
-  @for (item of cars(); track $index) {
-    <app-car-card
-      [item]="item"
-    >
-  
-    </app-car-card>
-  }
-</div>
+@if(isLoading()){
+  <div class="w-full h-30rem flex justify-content-center align-items-center">
+    <p-progress-spinner ariaLabel="loading" />
+  </div>
+}
+@else {
+  <div class="dataset">
+    @for (item of cars(); track $index) {
+      <app-car-card
+        [item]="item"
+      >
+    
+      </app-car-card>
+    }
+  </div>
+}

@@ -1,11 +1,13 @@
-import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
+import { Component, DestroyRef, inject, model, OnInit, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Button } from "primeng/button";
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
-import { Button } from "primeng/button";
-import { CarCard } from "../../shared/components/car-card/car-card";
+import { CardModel } from '../../core/models/car.model';
 import { CarService } from '../../core/services/car.service';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { Car } from '../../core/models/car.model';
+import { CarCard } from "../../shared/components/car-card/car-card";
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-show-room',
@@ -13,7 +15,9 @@ import { Car } from '../../core/models/car.model';
     InputTextModule,
     CardModule,
     Button,
-    CarCard
+    CarCard,
+    ProgressSpinnerModule,
+    FormsModule
   ],
   templateUrl: './show-room.html',
   styleUrl: './show-room.scss',
@@ -22,24 +26,33 @@ export class ShowRoom implements OnInit {
   private readonly carService = inject(CarService);
   private readonly destroyRef = inject(DestroyRef);
 
-  protected cars = signal<Car[]>([]);
+  protected cars = signal<CardModel[]>([]);
+  protected isLoading = signal<boolean>(false);
+  protected searchWord = model<string>();
 
   ngOnInit() {
-    this.getAllCars();
+    this.loadData();
   }
 
-  protected getAllCars() {
-    this.carService.getAllCards()
+  protected loadData(name?: string) {
+    this.isLoading.set(true);
+    this.carService.getAllCards({
+      name: this.searchWord()
+    })
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (data) => {
-          debugger
-          this.cars.set(data.response);
+          this.cars.set(data);
+          this.isLoading.set(false);
         },
         error: (err) => {
           console.log(err);
-
+          this.isLoading.set(false);
         }
       });
+  }
+
+  protected search() {
+
   }
 }

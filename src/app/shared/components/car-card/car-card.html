@@ -1,9 +1,21 @@
 <div class="car-card">
   <img 
     class="card-image" 
-    src="https://i.pinimg.com/736x/b4/67/71/b46771328fa437498095029fe39c2f3a.jpg" 
+    [src]="item()?.pictureUrl" 
     alt="porche"
     >
-  <h4>{{ item()?.brand }}</h4>
-  <p>{{ item()?.name }}</p>
+  <div class="p-4">
+    <div class="w-full flex justify-content-between">
+      <h4>Model: </h4>
+      <h4>{{ item()?.model }}</h4>
+    </div>
+    <div class="w-full flex justify-content-between">
+      <h4>Name: </h4>
+      <p>{{ item()?.name }}</p>
+    </div>
+    <div class="w-full flex justify-content-between">
+      <p>Description: </p>
+      <p>{{ item()?.description }}</p>
+    </div>
+  </div>
 </div>

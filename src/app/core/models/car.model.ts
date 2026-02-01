@@ -1,6 +1,7 @@
-export interface Car {
-  id: number;
+export interface CardModel {
+  id: string;
+  model: string;
   name: string;
-  brand: string;
-  price: number;
+  description: string;
+  pictureUrl: string;
 }
