@@ -33,6 +33,7 @@ export class ShowRoom implements OnInit {
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (data) => {
+          debugger
           this.cars.set(data.response);
         },
         error: (err) => {
