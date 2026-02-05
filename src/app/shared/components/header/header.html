@@ -1,10 +1,9 @@
 <div class="header liquid-glass">
   <h3 class="main-text">Hello Angular</h3>
   <div class="lesson-items">
-    <a class="items" routerLink="/lesson/show-room">Words</a>
-    <p-select
-      [options]="[1,2,3,4]"
-      placeholder="No other lessons"
-    />
+    @for (item of lessons(); track $index) {
+      <a class="items" [routerLink]="item.path">{{ item.name }}</a>
+    }
+    <p-select [options]="[1, 2, 3, 4]" placeholder="No other lessons" />
   </div>
 </div>

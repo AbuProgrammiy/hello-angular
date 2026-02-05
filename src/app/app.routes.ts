@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { ReactiveJsLesson } from './features/reactive-js-lesson/reactive-js-lesson';
 import { ShowRoom } from './features/show-room/show-room';
 import { LessonLayout } from './layout/lesson-layout/lesson-layout';
 import { ProductDetail } from './shared/components/product-detail/product-detail';
@@ -6,7 +7,7 @@ import { ProductDetail } from './shared/components/product-detail/product-detail
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'lesson',
+    redirectTo: 'lesson/reactive-js',
     pathMatch: 'full',
 
   },
@@ -15,17 +16,16 @@ export const routes: Routes = [
     component: LessonLayout,
     children: [
       {
-        path: '',
-        redirectTo: 'show-room',
-        pathMatch: 'full'
-      },
-      {
         path: 'show-room',
         component: ShowRoom
       },
       {
         path: 'product-detail/:id',
         component: ProductDetail
+      },
+      {
+        path: 'reactive-js',
+        component: ReactiveJsLesson
       }
     ]
   }
