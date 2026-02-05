@@ -1,0 +1,41 @@
+.main {
+  width: 100%;
+  height: 400px;
+  padding: 10px;
+  background-color: #3BC1A8;
+}
+
+.lesson-number {
+  margin: 0;
+  font-size: 70px;
+  font-weight: 100;
+  color: white;
+}
+
+.lesson-name {
+  text-align: center;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-handler {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  color: white;
+}
+
+.result-text {
+  color: white;
+}
