@@ -1,0 +1,14 @@
+<div class="main">
+  <h3 class="header">1-Component</h3>
+  <p class="text-center">Choose:</p>
+  <div class="theme-collection">
+    @for (item of themeCollection(); track $index) {
+      <div
+        class="theme-item"
+        [style.backgroundColor]="item"
+        [class.selected-item]="item == selectedColor()"
+        (click)="changeColor(item)"
+      ></div>
+    }
+  </div>
+</div>
