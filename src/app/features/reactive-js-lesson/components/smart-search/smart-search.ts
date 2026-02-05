@@ -2,13 +2,15 @@ import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from "@angular/forms";
 import { InputTextModule } from 'primeng/inputtext';
+import { Tooltip } from 'primeng/tooltip';
 import { debounceTime, filter } from 'rxjs';
 
 @Component({
   selector: 'app-smart-search',
   imports: [
     InputTextModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Tooltip
   ],
   templateUrl: './smart-search.html',
   styleUrl: './smart-search.scss',
