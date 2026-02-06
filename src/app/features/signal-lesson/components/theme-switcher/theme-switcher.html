@@ -1,0 +1,18 @@
+<div class="main" [ngClass]="selectedTheme()">
+  <h1 class="lesson-number">4</h1>
+  <h3
+    class="lesson-theme"
+    pTooltip="Effect ichida signalni eshitib mavzuni o'zgartirish"
+  >
+    Theme Switcher
+  </h3>
+  <div class="custom-container">
+    <p-selectbutton
+      [options]="themes()"
+      [(ngModel)]="selectedTheme"
+      optionLabel="label"
+      optionValue="value"
+      aria-labelledby="basic"
+    />
+  </div>
+</div>
