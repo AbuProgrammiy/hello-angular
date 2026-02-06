@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CounterApp } from "./components/counter-app/counter-app";
+import { TodoList } from "./components/todo-list/todo-list";
 
 @Component({
   selector: 'app-signal-lesson',
-  imports: [CounterApp],
+  imports: [CounterApp, TodoList],
   templateUrl: './signal-lesson.html',
   styleUrl: './signal-lesson.scss',
 })

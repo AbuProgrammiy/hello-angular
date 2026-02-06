@@ -1,0 +1,35 @@
+<div class="main">
+  <h1 class="lesson-number">2</h1>
+  <h3 class="lesson-theme" pTooltip="Computed orqali ToDolarni filterlash">
+    ToDo List
+  </h3>
+  <div class="container">
+    <p-selectbutton
+      [options]="stateOptions"
+      [(ngModel)]="selectedState"
+      optionLabel="label"
+      optionValue="value"
+      aria-labelledby="basic"
+    />
+    @for (item of filteredToDo(); track $index) {
+      <div class="todo-item">
+        <div class="flex justify-content-between">
+          <p>Name</p>
+          <p>{{ item.name }}</p>
+        </div>
+        <div class="flex justify-content-between">
+          <p>Description</p>
+          <p>{{ item.description }}</p>
+        </div>
+        <div class="flex justify-content-between">
+          <p>Date</p>
+          <p>{{ item.date | date: "hh:mm dd/mm/yyyy" }}</p>
+        </div>
+        <div class="flex justify-content-between">
+          <p>State</p>
+          <p>{{ item.state | state }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>

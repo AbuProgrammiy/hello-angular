@@ -1,0 +1,45 @@
+.main {
+  width: 100%;
+  height: 400px;
+  padding: 10px;
+  overflow: auto;
+  background-color: #D2DAFF;
+}
+
+.lesson-number {
+  margin: 0;
+  position: absolute;
+  font-size: 70px;
+  font-weight: 100;
+  color: gray;
+}
+
+.lesson-theme {
+  text-align: center;
+  color: gray;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-item {
+  min-width: 250px;
+  min-height: 40px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #eef1ff;
+  border-radius: 10px;
+  border: 2px solid #eef1ff;
+  background-color: #A7AAE1;
+
+  p {
+    margin: 0;
+  }
+}
