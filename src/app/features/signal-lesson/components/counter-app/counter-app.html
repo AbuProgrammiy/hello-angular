@@ -1,0 +1,24 @@
+<div class="main">
+  <h1 class="lesson-number">1</h1>
+  <h3
+    class="lesson-theme"
+    pTooltip="Signallar orqali sonlarni increment decrement qilish"
+  >
+    Counter App
+  </h3>
+  <div class="container">
+    <p class="number">
+      Number: <span class="value">{{ number() }}</span>
+    </p>
+    <div class="btn-handler">
+      <p-button label="Increment" severity="success" (onClick)="increment()" />
+      <p-button label="Decrement" severity="danger" (onClick)="decrement()" />
+    </div>
+    <p class="number">
+      Double: <span class="value">{{ doubleResult() }}</span>
+    </p>
+    <p class="number">
+      Tripple: <span class="value">{{ trippleResult() }}</span>
+    </p>
+  </div>
+</div>

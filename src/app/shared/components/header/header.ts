@@ -16,6 +16,10 @@ import { SelectModule } from 'primeng/select';
 export class Header {
   protected lessons = signal<LessonItem[]>([
     {
+      name: "Signal",
+      path: '/lesson/signal-lesson'
+    },
+    {
       name: "RxJS",
       path: '/lesson/reactive-js'
     },

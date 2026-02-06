@@ -4,6 +4,6 @@
     @for (item of lessons(); track $index) {
       <a class="items" [routerLink]="item.path">{{ item.name }}</a>
     }
-    <p-select [options]="[1, 2, 3, 4]" placeholder="No other lessons" />
+    <p-select [options]="[]" placeholder="No other lessons" />
   </div>
 </div>
