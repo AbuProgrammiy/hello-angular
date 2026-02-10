@@ -1,0 +1,27 @@
+<form [formGroup]="registerForm" class="main">
+  <h1 class="lesson-number">1</h1>
+  <div class="controls-handler">
+    <h2 class="header">Register form</h2>
+    <div class="input-handler">
+      <label>First name</label>
+      <input type="text" pInputText formControlName="firstName" />
+    </div>
+    <div class="input-handler">
+      <label>Last name:</label>
+      <input type="text" pInputText formControlName="lastName" />
+    </div>
+    <div class="input-handler">
+      <label>Email:</label>
+      <input type="text" pInputText formControlName="email" />
+    </div>
+    <div class="input-handler">
+      <label>Password:</label>
+      <input type="text" pInputText formControlName="password" />
+    </div>
+    <div class="input-handler">
+      <label>Confirm password:</label>
+      <input type="text" pInputText formControlName="confirmPassword" />
+    </div>
+    <p-button label="Submit" severity="success" />
+  </div>
+</form>
