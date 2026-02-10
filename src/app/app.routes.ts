@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { FormsLesson } from './features/forms-lesson/forms-lesson';
 import { ReactiveJsLesson } from './features/reactive-js-lesson/reactive-js-lesson';
 import { ShowRoom } from './features/show-room/show-room';
 import { SignalLesson } from './features/signal-lesson/signal-lesson';
@@ -31,6 +32,10 @@ export const routes: Routes = [
       {
         path: 'signal-lesson',
         component: SignalLesson
+      },
+      {
+        path: 'forms-validation',
+        component: FormsLesson
       }
     ]
   }

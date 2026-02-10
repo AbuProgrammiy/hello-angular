@@ -1,9 +1,21 @@
 <div class="header liquid-glass">
   <h3 class="main-text">Hello Angular</h3>
   <div class="lesson-items">
-    @for (item of lessons(); track $index) {
-      <a class="items" [routerLink]="item.path">{{ item.name }}</a>
+    @for (item of navBarItems(); track $index) {
+      <a
+        class="items"
+        [routerLink]="item.path"
+        (click)="selectedOption.set(null)"
+        >{{ item.name }}</a
+      >
     }
-    <p-select [options]="[]" placeholder="No other lessons" />
+    <p-select
+      [options]="dropDownOptions()"
+      placeholder="Other Lessons"
+      optionLabel="name"
+      optionValue="path"
+      [(ngModel)]="selectedOption"
+      (onChange)="onDropdownChange($event.value)"
+    />
   </div>
 </div>
