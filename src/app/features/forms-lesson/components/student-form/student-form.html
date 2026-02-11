@@ -1,1 +1,89 @@
-<p>student-form works!</p>
+<form [formGroup]="registerForm" class="main">
+  <h1 class="lesson-number">2</h1>
+  <div class="controls-handler">
+    <h2 class="header">Student form</h2>
+    <div class="input-handler">
+      <label>Full name</label>
+      <div class="control">
+        <input type="text" pInputText formControlName="fullName" />
+        @if (fullName?.touched) {
+          @if (fullName?.hasError("required")) {
+            <p class="warn-msg">full name is required</p>
+          } @else if (fullName?.hasError("minlength")) {
+            <p class="warn-msg">length should above 3</p>
+          }
+        }
+      </div>
+    </div>
+    <div class="input-handler">
+      <label>Grade:</label>
+      <div class="control">
+        <p-select
+          [options]="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]"
+          [showClear]="true"
+          formControlName="grade"
+          placeholder="Select a grade"
+          class="w-19rem"
+        />
+        @if (grade?.touched) {
+          @if (grade?.hasError("required")) {
+            <p class="warn-msg">grade is required</p>
+          }
+        }
+      </div>
+    </div>
+    <div class="input-handler">
+      <label>Phone number:</label>
+      <div class="control">
+        <input type="tel" pInputText formControlName="phonenumber" />
+        @if (phonenumber?.touched) {
+          @if (phonenumber?.hasError("required")) {
+            <p class="warn-msg">phonenumber is required</p>
+          } @else if (phonenumber?.hasError("pattern")) {
+            <p class="warn-msg">+9989 format is required</p>
+          }
+        }
+      </div>
+    </div>
+    <div class="input-handler">
+      <label>Subject:</label>
+      <div class="control">
+        <p-multiselect
+          [options]="subjects"
+          formControlName="subject"
+          placeholder="Select Subject"
+          [maxSelectedLabels]="3"
+          class="w-19rem"
+          [showClear]="true"
+        />
+        @if (subject?.touched) {
+          @if (subject?.hasError("required")) {
+            <p class="warn-msg">subject is required</p>
+          }
+        }
+      </div>
+    </div>
+    <div class="input-handler">
+      <label>Comment:</label>
+      <div class="control">
+        <textarea
+          rows="3"
+          cols="32"
+          pTextarea
+          formControlName="comment"
+        ></textarea>
+        @if (comment?.touched) {
+          @if (comment?.hasError("required")) {
+            <p class="warn-msg">comment is required</p>
+          }
+        }
+      </div>
+    </div>
+    <p-button
+      label="Submit"
+      severity="success"
+      [disabled]="registerForm.invalid"
+      (onClick)="register()"
+    />
+  </div>
+</form>

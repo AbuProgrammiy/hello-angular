@@ -1,0 +1,51 @@
+.main {
+  width: 100%;
+  height: 600px;
+  background-color: #DFD3C3;
+  padding: 10px;
+  font-family: sans-serif;
+  color: white;
+}
+
+.lesson-number {
+  margin: 0;
+  position: absolute;
+  font-size: 70px;
+  font-weight: 100;
+  color: white;
+}
+
+.header {
+  text-align: center;
+  font-weight: 100;
+  color: white;
+}
+
+.controls-handler {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // gap: 15px;
+}
+
+.input-handler {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+input {
+  width: 300px;
+}
+
+.warn-msg {
+  margin: 0;
+  color: red;
+}
+
+.control {
+  min-height: 60px;
+}
