@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { AbstractControl, FormBuilder, FormsModule, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from "@angular/forms";
+import { MessageService } from 'primeng/api';
 import { Button } from "primeng/button";
 import { InputText } from 'primeng/inputtext';
 
@@ -16,6 +17,7 @@ import { InputText } from 'primeng/inputtext';
 })
 export class RegisterForm {
   private readonly fb = inject(FormBuilder);
+  private readonly messageService = inject(MessageService);
 
   private passwordMatchValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
     if (!(this.password && this.confirmPassword)) return null;
@@ -46,5 +48,12 @@ export class RegisterForm {
   }
   get confirmPassword() {
     return this.registerForm.get('confirmPassword');
+  }
+
+
+  protected register() {
+    this.messageService.add({
+      severity: 'success', summary: 'Success', detail: 'Registered successfully!', life: 3000
+    });
   }
 }
