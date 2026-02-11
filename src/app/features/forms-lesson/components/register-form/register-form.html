@@ -4,24 +4,73 @@
     <h2 class="header">Register form</h2>
     <div class="input-handler">
       <label>First name</label>
-      <input type="text" pInputText formControlName="firstName" />
+      <div class="control">
+        <input type="text" pInputText formControlName="firstName" />
+        @if (firstName?.touched) {
+          @if (firstName?.hasError("required")) {
+            <p class="warn-msg">first name is required</p>
+          } @else if (firstName?.hasError("minlength")) {
+            <p class="warn-msg">length should above 3</p>
+          }
+        }
+      </div>
     </div>
     <div class="input-handler">
       <label>Last name:</label>
-      <input type="text" pInputText formControlName="lastName" />
+      <div class="control">
+        <input type="text" pInputText formControlName="lastName" />
+        @if (lastName?.touched) {
+          @if (lastName?.hasError("required")) {
+            <p class="warn-msg">last name is required</p>
+          } @else if (lastName?.hasError("minlength")) {
+            <p class="warn-msg">length should above 3</p>
+          }
+        }
+      </div>
     </div>
     <div class="input-handler">
       <label>Email:</label>
-      <input type="text" pInputText formControlName="email" />
+      <div class="control">
+        <input type="text" pInputText formControlName="email" />
+        @if (email?.touched) {
+          @if (email?.hasError("required")) {
+            <p class="warn-msg">name is required</p>
+          } @else if (email?.hasError("email")) {
+            <p class="warn-msg">email notog'ri formatda</p>
+          }
+        }
+      </div>
     </div>
     <div class="input-handler">
       <label>Password:</label>
-      <input type="text" pInputText formControlName="password" />
+      <div class="control">
+        <input type="password" pInputText formControlName="password" />
+        @if (password?.touched) {
+          @if (password?.hasError("required")) {
+            <p class="warn-msg">password is required</p>
+          } @else if (password?.hasError("pattern")) {
+            <p class="warn-msg">1 uppercase,number, character, 8 chars</p>
+          }
+        }
+      </div>
     </div>
     <div class="input-handler">
       <label>Confirm password:</label>
-      <input type="text" pInputText formControlName="confirmPassword" />
+      <div class="control">
+        <input type="password" pInputText formControlName="confirmPassword" />
+        @if (confirmPassword?.touched) {
+          @if (confirmPassword?.hasError("required")) {
+            <p class="warn-msg">confirm password is required</p>
+          } @else if (registerForm?.hasError("passwordMismatch")) {
+            <p class="warn-msg">password is not matched</p>
+          }
+        }
+      </div>
     </div>
-    <p-button label="Submit" severity="success" />
+    <p-button
+      label="Submit"
+      severity="success"
+      [disabled]="registerForm.invalid"
+    />
   </div>
 </form>

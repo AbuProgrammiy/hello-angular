@@ -28,7 +28,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  // gap: 15px;
 }
 
 .input-handler {
@@ -39,4 +39,13 @@
 
 input {
   width: 300px;
+}
+
+.warn-msg {
+  margin: 0;
+  color: red;
+}
+
+.control {
+  min-height: 60px;
 }
