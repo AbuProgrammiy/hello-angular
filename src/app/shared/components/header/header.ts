@@ -38,6 +38,10 @@ export class Header {
       path: '/lesson/forms-validation'
     },
     {
+      name: "Http-Lesson",
+      path: '/lesson/http-lesson'
+    },
+    {
       name: "Words",
       path: '/lesson/show-room'
     },

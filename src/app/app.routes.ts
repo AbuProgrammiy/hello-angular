@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { FormsLesson } from './features/forms-lesson/forms-lesson';
+import { HttpLesson } from './features/http-lesson/http-lesson';
 import { ReactiveJsLesson } from './features/reactive-js-lesson/reactive-js-lesson';
 import { ShowRoom } from './features/show-room/show-room';
 import { SignalLesson } from './features/signal-lesson/signal-lesson';
@@ -36,6 +37,10 @@ export const routes: Routes = [
       {
         path: 'forms-validation',
         component: FormsLesson
+      },
+      {
+        path: 'http-lesson',
+        component: HttpLesson
       }
     ]
   }
