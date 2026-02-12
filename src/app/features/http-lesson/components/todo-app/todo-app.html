@@ -1,0 +1,15 @@
+<div class="main">
+  <h1 class="lesson-number">2</h1>
+  <h2 class="text-center">Todo App</h2>
+  <div class="todos-handler">
+    @for (item of todos()?.todos; track $index) {
+      <div class="todo-card">
+        <h3>Id: {{ item.id }}</h3>
+        <p>{{ item.todo }}</p>
+        <p>
+          isCompleted: <span class="font-bold">{{ item.completed }}</span>
+        </p>
+      </div>
+    }
+  </div>
+</div>
