@@ -1,1 +1,20 @@
-<p>photo-gallary works!</p>
+<div class="main">
+  <h1 class="lesson-number">3</h1>
+  <div class="task-name-handler">
+    <h2
+      class="task-name"
+      pTooltip="public apiga zapros qilip rasmlar olinmoqda"
+    >
+      Photo Gallary
+    </h2>
+  </div>
+  <div class="galary">
+    @for (item of cats(); track $index) {
+      <div>
+        <div class="image-handler">
+          <p-image [src]="item.url" alt="Image" width="250" [preview]="true" />
+        </div>
+      </div>
+    }
+  </div>
+</div>
