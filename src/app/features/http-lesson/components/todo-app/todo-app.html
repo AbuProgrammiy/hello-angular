@@ -1,6 +1,13 @@
 <div class="main">
   <h1 class="lesson-number">2</h1>
-  <h2 class="text-center">Todo App</h2>
+  <div class="task-name-handler">
+    <h2
+      class="task-name"
+      pTooltip="public apiga zapros qilip todolar olinmoqda"
+    >
+      Todo App
+    </h2>
+  </div>
   <div class="todos-handler">
     @for (item of todos()?.todos; track $index) {
       <div class="todo-card">

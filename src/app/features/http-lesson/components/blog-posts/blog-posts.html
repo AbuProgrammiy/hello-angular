@@ -1,6 +1,13 @@
 <div class="main">
   <h1 class="lesson-number">1</h1>
-  <h2 class="text-center">Blog Post</h2>
+  <div class="task-name-handler">
+    <h2
+      class="task-name"
+      pTooltip="public apiga zapros qilip bloglar olinmoqda"
+    >
+      Blog Post
+    </h2>
+  </div>
   <div class="post-handler">
     @for (item of posts(); track $index) {
       <div class="post-card">

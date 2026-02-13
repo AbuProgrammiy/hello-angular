@@ -1,12 +1,13 @@
 import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MessageService } from 'primeng/api';
+import { Tooltip } from "primeng/tooltip";
 import { TodoResponseModel } from './models/blog-post.model';
 import { TodoService } from './services/blog-post.service';
 
 @Component({
   selector: 'app-todo-app',
-  imports: [],
+  imports: [Tooltip],
   templateUrl: './todo-app.html',
   styleUrl: './todo-app.scss',
 })

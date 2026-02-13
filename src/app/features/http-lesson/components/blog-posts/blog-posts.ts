@@ -2,6 +2,7 @@ import { AsyncPipe } from '@angular/common';
 import { Component, DestroyRef, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MessageService } from 'primeng/api';
+import { Tooltip } from "primeng/tooltip";
 import { of } from 'rxjs';
 import { BlogPostModel } from './models/blog-post.model';
 import { BlogPostService } from './services/blog-post.service';
@@ -9,7 +10,8 @@ import { BlogPostService } from './services/blog-post.service';
 @Component({
   selector: 'app-blog-posts',
   imports: [
-    AsyncPipe
+    AsyncPipe,
+    Tooltip
   ],
   templateUrl: './blog-posts.html',
   styleUrl: './blog-posts.scss',

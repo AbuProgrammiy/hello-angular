@@ -36,3 +36,18 @@
   height: 300px;
   object-fit: cover;
 }
+
+.task-name-handler {
+  width: 100%;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  top: 0;
+}
+
+.task-name {
+  padding: 5px 10px;
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba($color: white, $alpha: 0.3);
+  border-radius: 10px;
+}
